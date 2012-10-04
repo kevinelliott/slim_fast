@@ -25,6 +25,7 @@ Pending:
 * Custom Domain(s)
 * Simple Admin Interface
 * Short Link Statistics
+* Google Analytics Campaign Tracking (utm_source, etc)
 
 Future:
 
@@ -75,6 +76,12 @@ ShortUrl
   hit_count:integer        (default: 0)
   owner_type:string        (optional)
   owner_id:integer         (optional)
+  utm_enabled:boolean      (default: false)
+  utm_source:string        (optional)
+  utm_medium:string        (optional)
+  utm_campaign:string      (optional)
+  utm_term:string          (optional)
+  utm_content:string       (optional)
 
 Expansion
   short_url_id:integer     (required)
