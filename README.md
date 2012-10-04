@@ -29,13 +29,13 @@ Design Considerations
 ---------------------
 
 * Must be easy to install/upgrade
-  # gem install slim_fast
-  # rails g slim_fast:install *or* rails g slim_fast:upgrade
-  # edit initializer
+  * gem install slim_fast
+  * rails g slim_fast:install *or* rails g slim_fast:upgrade
+  * edit initializer
 * Must be testable
   * rspec
   * cucumber?
 * Can be customized
-  # developer can configure via admin interface
-  # admin interface can be nested into existing admin UI
+  * developer can configure via admin interface
+  * admin interface can be nested into existing admin UI
 
