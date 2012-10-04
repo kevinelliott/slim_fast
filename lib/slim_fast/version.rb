@@ -1,0 +1,3 @@
+module SlimFast
+  VERSION = "0.0.1"
+end
