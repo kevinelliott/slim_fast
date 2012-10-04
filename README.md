@@ -5,8 +5,10 @@ The lightening speed diet plan that makes your URLs slimmer, faster.
 
 slim_fast is a Ruby gem that makes it easy to create your own custom URL shortening service that can be embedded into your new or existing Rails app. Since it is a library and contains a Rails Engine, slim_fast will not interfere with your existing application.
 
-Status
-------
+Project Status
+--------------
+
+### Not yet usable.
 
 slim_fast is not yet ready for public consumption. It is under heavy development and this status will change when the first usable release is available.
 
@@ -38,8 +40,10 @@ Maybes:
 Installation
 ------------
 
+```shell
 $ gem install slim_fast
 $ rails g slim_fast:install
+```
 
 Design Considerations
 ---------------------
