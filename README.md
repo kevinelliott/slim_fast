@@ -70,6 +70,8 @@ ShortUrl
   domain_id:integer        (optional)
   code:string              (required)
   destination_url:string   (required)
+  name:string              (required)
+  description:text         (optional)
   hit_count:integer        (default: 0)
   owner_type:string        (optional)
   owner_id:integer         (optional)
@@ -83,9 +85,37 @@ Expansion
   remote_addr:string       (optional)
   user_agent:string        (optional)
 
+Maintainer
+----------
+
+* Kevin Elliott - http://kevinelliott.net - http://github.com/kevinelliott
+* WeLike - http://www.welikeinc.com - http://github.com/welike
+
 Contributors
 ------------
+
+A warm thank you to all contributors to the project, who have put effort and time into making this gem more useful.
 
 License
 -------
 
+(The MIT License)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
