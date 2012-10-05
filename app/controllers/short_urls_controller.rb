@@ -3,7 +3,12 @@ class ShortUrlsController < ApplicationController
   # GET /short_urls
   # GET /short_urls.json
   def index
-    @short_urls = ShortUrl.all
+    @short_domain = ShortDomain.find_by_id(params[:short_domain_id]).first
+    @short_urls = if @short_domain
+      @short_domain.short_urls
+    else
+      ShortUrl.includes(:short_domain)
+    end
 
     respond_to do |format|
       format.html # index.html.erb

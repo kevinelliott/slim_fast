@@ -1,6 +1,10 @@
 <%= render 'shared/slim_fast_navigation' %>
 
-<h1>Short URLs</h1>
+<% if @short_domain %>
+  <h1>Short URLs for <%= @short_domain.domain %></h1>
+<% else %>
+  <h1>Short URLs</h1>
+<% end %>
 
 <% if @short_urls.count > 0 %>
   <table class="table table-striped">

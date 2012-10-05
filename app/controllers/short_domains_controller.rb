@@ -3,7 +3,7 @@ class ShortDomainsController < ApplicationController
   # GET /short_domains
   # GET /short_domains.json
   def index
-    @short_domains = ShortDomain.all
+    @short_domains = ShortDomain.includes(:short_urls)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +43,7 @@ class ShortDomainsController < ApplicationController
   def create
     @short_domain = ShortDomain.new(params[:short_domain])
     puts @short_domain.inspect
-    
+
     respond_to do |format|
       if @short_domain.save
         format.html { redirect_to @short_domain, notice: 'Short domain was successfully created.' }
