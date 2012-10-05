@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "The lightening speed diet plan that makes your URLs slimmer, faster."
   s.description = "The lightening speed diet plan that makes your URLs slimmer, faster."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.8"

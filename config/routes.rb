@@ -8,4 +8,6 @@ SlimFast::Engine.routes.draw do
   end
   resources :short_urls
 
+	root :to => "short_domains#index"
+  
 end
