@@ -22,5 +22,6 @@
 <% end %>
 
 <p>
+  <%= link_to '<i class="icon-plus"></i> Add a Short URL'.html_safe, new_short_domain_short_url_path(@short_domain), :class => 'btn btn-primary' %>
   <%= link_to 'Create a new Short Url', new_short_domain_short_url_path(@short_domain) %>
 </p>
