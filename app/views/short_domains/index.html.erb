@@ -11,14 +11,14 @@
     <tr>
       <th></th>
       <th>Domain</th>
-      <th>Actions</th>
+      <th class="span2">Actions</th>
     </tr>
 
   <% @short_domains.each do |short_domain| %>
     <tr>
       <td class="middle"><%= short_domain.is_default ? "*" : "" %></td>
       <td class="middle"><%= link_to short_domain.domain, short_domain %></td>
-      <td class="right">
+      <td class="span2 right">
         <%= link_to 'Edit', edit_short_domain_path(short_domain), :class => 'btn btn-info' %>
         <%= link_to 'Delete', short_domain, class: 'btn btn-danger', method: :delete, data: { confirm: 'All Short URLs specifically attached to this domain will be deleted as well. Are you sure?' } %>
       </td>
