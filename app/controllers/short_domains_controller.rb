@@ -14,7 +14,7 @@ class ShortDomainsController < ApplicationController
   # GET /short_domains/1
   # GET /short_domains/1.json
   def show
-    @short_domain = ShortDomain.find(params[:id])
+    @short_domain = ShortDomain.find(params[:id], :include => [:short_urls])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +35,7 @@ class ShortDomainsController < ApplicationController
 
   # GET /short_domains/1/edit
   def edit
-    @short_domain = ShortDomain.find(params[:id])
+    @short_domain = ShortDomain.find(params[:id], :include => [:short_urls])
   end
 
   # POST /short_domains

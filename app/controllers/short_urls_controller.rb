@@ -3,7 +3,7 @@ class ShortUrlsController < ApplicationController
   # GET /short_urls
   # GET /short_urls.json
   def index
-    @short_domain = ShortDomain.find_by_id(params[:short_domain_id]).includes(:short_urls)
+    @short_domain = ShortDomain.find_by_id(params[:short_domain_id], :include => [:short_urls])
     @short_urls = if @short_domain
       @short_domain.short_urls
     else
@@ -30,7 +30,7 @@ class ShortUrlsController < ApplicationController
   # GET /short_urls/new
   # GET /short_urls/new.json
   def new
-    @short_domain = ShortDomain.find_by_id(params[:short_domain_id]).includes(:short_url)
+    @short_domain = ShortDomain.find_by_id(params[:short_domain_id], :include => [:short_url])
     @short_url = if @short_domain
       @short_domain.short_urls.build
     else
