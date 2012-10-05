@@ -30,7 +30,7 @@ class ShortUrlsController < ApplicationController
   # GET /short_urls/new
   # GET /short_urls/new.json
   def new
-    @short_domain = ShortDomain.find_by_id(params[:short_domain_id], :include => [:short_url])
+    @short_domain = ShortDomain.find_by_id(params[:short_domain_id], :include => [:short_urls])
     @short_url = if @short_domain
       @short_domain.short_urls.build
     else
@@ -89,6 +89,27 @@ class ShortUrlsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to short_urls_url }
       format.json { head :no_content }
+    end
+  end
+
+  def expand
+    @short_url = ShortUrl.find_by_code(params[:code])
+
+    respond_to do |format|
+      if @short_url
+        @exp = @short_url.expansions.build
+        @exp.referrer_url = request.env['HTTP_REFERRER']
+        @exp.request_url  = request.original_url
+        @exp.user_agent   = request.env["HTTP_USER_AGENT"]
+        @exp.remote_ip    = request.remote_ip
+        @exp.remote_addr  = request.remote_ip
+        @exp.save
+        @short_url.increment!(:expansions)
+
+        format.html { redirect_to @short_url.destination_url }
+      else
+        format.html { redirect_to root_url }
+      end
     end
   end
 end

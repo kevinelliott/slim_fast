@@ -3,13 +3,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Short Domain: <%= @short_domain.domain %></h1>
-<p>
-  <%= link_to 'Edit', edit_short_domain_path(@short_domain) %>
-</p>
 
 <p>
   <b>Is this the default domain?</b>
   <%= @short_domain.is_default ? 'Yes' : 'No' %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_short_domain_path(@short_domain), :class => 'btn btn-primary' %>
 </p>
 
 <p>
@@ -22,6 +23,5 @@
 <% end %>
 
 <p>
-  <%= link_to '<i class="icon-plus"></i> Add a Short URL'.html_safe, new_short_domain_short_url_path(@short_domain), :class => 'btn btn-primary' %>
-  <%= link_to 'Create a new Short Url', new_short_domain_short_url_path(@short_domain) %>
+  <%= link_to '<i class="icon-plus icon-white"></i> Add a Short URL'.html_safe, new_short_domain_short_url_path(@short_domain), :class => 'btn btn-primary' %>
 </p>
