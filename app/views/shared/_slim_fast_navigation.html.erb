@@ -1,5 +1,11 @@
 <ul id="slim_fast_navigation" class="nav nav-tabs">
-  <li class="<%= 'active' if controller.controller_name == 'short_domains' %>"><%= link_to 'Short Domains', short_domains_path %></li>
-  <li><%= link_to 'Short URLs', short_urls_path %></li>
-  <li><%= link_to 'Expansions', expansions_path %></li>
+  <li class="<%= 'active' if controller.controller_name == 'short_domains' %>">
+    <%= link_to 'Short Domains', short_domains_path %>
+  </li>
+  <li class="<%= 'active' if controller.controller_name == 'short_urls' %>">
+    <%= link_to 'Short URLs', short_urls_path %>
+  </li>
+  <li class="<%= 'active' if controller.controller_name == 'expansions' %>">
+    <%= link_to 'Expansions', expansions_path %>
+  </li>
 </ul>
