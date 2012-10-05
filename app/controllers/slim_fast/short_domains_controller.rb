@@ -1,6 +1,6 @@
 require_dependency "slim_fast/application_controller"
 
-module SlimFast
+#module SlimFast
   class ShortDomainsController < ApplicationController
 
     # GET /short_domains
@@ -85,4 +85,4 @@ module SlimFast
       end
     end
   end
-end
+#end
