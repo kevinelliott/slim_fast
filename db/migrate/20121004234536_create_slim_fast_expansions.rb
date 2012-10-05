@@ -1,6 +1,6 @@
 class CreateSlimFastExpansions < ActiveRecord::Migration
   def change
-    create_table :slim_fast_expansions do |t|
+    create_table :expansions do |t|
       t.integer :short_url_id, :required => true
       t.integer :domain_id
       t.string :request_url

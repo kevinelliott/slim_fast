@@ -1,6 +1,6 @@
 class CreateSlimFastShortUrls < ActiveRecord::Migration
   def change
-    create_table :slim_fast_short_urls do |t|
+    create_table :short_urls do |t|
       t.integer :short_domain_id
       t.string :code,             :required => true
       t.string :destination_url,  :required => true
