@@ -64,10 +64,13 @@ Model Structure
 ---------------
 
 ShortDomain
+<pre>
   domain:string            (required)
   is_default:boolean       (default: false)
+</pre>
 
 ShortUrl
+<pre>
   short_domain_id:integer  (optional)
   code:string              (required)
   destination_url:string   (required)
@@ -82,8 +85,10 @@ ShortUrl
   utm_campaign:string      (optional)
   utm_term:string          (optional)
   utm_content:string       (optional)
+</pre>
 
 Expansion
+<pre>
   short_url_id:integer     (required)
   domain_id:integer        (optional)
   request_url:string       (optional)
@@ -91,6 +96,7 @@ Expansion
   remote_ip:string         (optional)
   remote_addr:string       (optional)
   user_agent:string        (optional)
+</pre>
 
 Maintainer
 ----------
