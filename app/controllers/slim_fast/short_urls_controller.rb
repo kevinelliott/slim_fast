@@ -1,8 +1,7 @@
-#require_dependency "slim_fast/application_controller"
+require_dependency "slim_fast/application_controller"
 
 module SlimFast
   class ShortUrlsController < ApplicationController
-    layout 'application'
 
     # GET /short_urls
     # GET /short_urls.json
