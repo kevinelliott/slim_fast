@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Domain:</b>
+  <%= @short_url.short_domain_id %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @short_url.code %>
+</p>
+
+<p>
+  <b>Destination url:</b>
+  <%= @short_url.destination_url %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @short_url.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @short_url.description %>
+</p>
+
+<p>
+  <b>Expansion count:</b>
+  <%= @short_url.expansion_count %>
+</p>
+
+<p>
+  <b>Owner type:</b>
+  <%= @short_url.owner_type %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @short_url.owner_id %>
+</p>
+
+<p>
+  <b>Utm enabled:</b>
+  <%= @short_url.utm_enabled %>
+</p>
+
+<p>
+  <b>Utm source:</b>
+  <%= @short_url.utm_source %>
+</p>
+
+<p>
+  <b>Utm medium:</b>
+  <%= @short_url.utm_medium %>
+</p>
+
+<p>
+  <b>Utm campaign:</b>
+  <%= @short_url.utm_campaign %>
+</p>
+
+<p>
+  <b>Utm term:</b>
+  <%= @short_url.utm_term %>
+</p>
+
+<p>
+  <b>Utm content:</b>
+  <%= @short_url.utm_content %>
+</p>
+
+
+<%= link_to 'Edit', edit_short_url_path(@short_url) %> |
+<%= link_to 'Back', short_urls_path %>

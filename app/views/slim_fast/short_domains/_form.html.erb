@@ -1,0 +1,26 @@
+<%= form_for(@short_domain) do |f| %>
+  <% if @short_domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@short_domain.errors.count, "error") %> prohibited this short_domain from being saved:</h2>
+
+      <ul>
+      <% @short_domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :domain %><br />
+    <%= f.text_field :domain %>
+  </div>
+  <div class="field">
+    <%= f.label :is_default %><br />
+    <%= f.check_box :is_default %>
+  </div>
+  <div class="actions">
+    <%= link_to 'Cancel', short_domains_path %>
+    <%= f.submit %>
+  </div>
+<% end %>

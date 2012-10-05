@@ -1,0 +1,61 @@
+<%= form_for(@short_url) do |f| %>
+  <% if @short_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@short_url.errors.count, "error") %> prohibited this short_url from being saved:</h2>
+
+      <ul>
+      <% @short_url.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :short_domain_id %><br />
+    <%= f.number_field :short_domain_id %>
+  </div>
+  <div class="field">
+    <%= f.label :destination_url, 'Destination URL' %><br />
+    <%= f.text_field :destination_url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <h2>Optional:</h2>
+  <div class="field">
+    <%= f.label :utm_enabled, 'UTM Enabled' %><br />
+    <%= f.check_box :utm_enabled %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_source, 'UTM Source (google, newsletter4)' %><br />
+    <%= f.text_field :utm_source %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_medium, 'UTM Medium (email, web, newspaper, tv)' %><br />
+    <%= f.text_field :utm_medium %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_campaign, ' UTM Campaign (Spring Sales)' %><br />
+    <%= f.text_field :utm_campaign %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_term, 'UTM Term' %><br />
+    <%= f.text_field :utm_term %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_content, 'UTM Content' %><br />
+    <%= f.text_field :utm_content %>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Cancel', short_urls_path %>
+    <%= f.submit %>
+  </div>
+<% end %>

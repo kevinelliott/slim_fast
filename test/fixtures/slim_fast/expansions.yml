@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  short_url_id: 1
+  domain_id: 1
+  request_url: MyString
+  referrer_url: MyString
+  remote_ip: MyString
+  remote_addr: MyString
+  user_agent: MyString
+
+two:
+  short_url_id: 1
+  domain_id: 1
+  request_url: MyString
+  referrer_url: MyString
+  remote_ip: MyString
+  remote_addr: MyString
+  user_agent: MyString

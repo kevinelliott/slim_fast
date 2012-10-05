@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  domain_id: 1
+  code: MyString
+  destination_url: MyString
+  name: MyString
+  description: MyText
+  expansion_count: 1
+  owner_type: MyString
+  owner_id: 1
+  utm_enabled: false
+  utm_source: MyString
+  utm_medium: MyString
+  utm_campaign: MyString
+  utm_term: MyString
+  utm_content: MyString
+
+two:
+  domain_id: 1
+  code: MyString
+  destination_url: MyString
+  name: MyString
+  description: MyText
+  expansion_count: 1
+  owner_type: MyString
+  owner_id: 1
+  utm_enabled: false
+  utm_source: MyString
+  utm_medium: MyString
+  utm_campaign: MyString
+  utm_term: MyString
+  utm_content: MyString

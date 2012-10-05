@@ -1,0 +1,45 @@
+<%= form_for(@expansion) do |f| %>
+  <% if @expansion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expansion.errors.count, "error") %> prohibited this expansion from being saved:</h2>
+
+      <ul>
+      <% @expansion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :short_url_id %><br />
+    <%= f.number_field :short_url_id %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_id %><br />
+    <%= f.number_field :domain_id %>
+  </div>
+  <div class="field">
+    <%= f.label :request_url %><br />
+    <%= f.text_field :request_url %>
+  </div>
+  <div class="field">
+    <%= f.label :referrer_url %><br />
+    <%= f.text_field :referrer_url %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_ip %><br />
+    <%= f.text_field :remote_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :remote_addr %><br />
+    <%= f.text_field :remote_addr %>
+  </div>
+  <div class="field">
+    <%= f.label :user_agent %><br />
+    <%= f.text_field :user_agent %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

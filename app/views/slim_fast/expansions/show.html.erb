@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Short url:</b>
+  <%= @expansion.short_url_id %>
+</p>
+
+<p>
+  <b>Domain:</b>
+  <%= @expansion.domain_id %>
+</p>
+
+<p>
+  <b>Request url:</b>
+  <%= @expansion.request_url %>
+</p>
+
+<p>
+  <b>Referrer url:</b>
+  <%= @expansion.referrer_url %>
+</p>
+
+<p>
+  <b>Remote ip:</b>
+  <%= @expansion.remote_ip %>
+</p>
+
+<p>
+  <b>Remote addr:</b>
+  <%= @expansion.remote_addr %>
+</p>
+
+<p>
+  <b>User agent:</b>
+  <%= @expansion.user_agent %>
+</p>
+
+
+<%= link_to 'Edit', edit_expansion_path(@expansion) %> |
+<%= link_to 'Back', expansions_path %>

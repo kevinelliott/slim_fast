@@ -65,15 +65,15 @@ Model Structure
 
 ShortDomain
   domain:string            (required)
-  default:boolean          (default: false)
+  is_default:boolean       (default: false)
 
 ShortUrl
-  domain_id:integer        (optional)
+  short_domain_id:integer  (optional)
   code:string              (required)
   destination_url:string   (required)
   name:string              (required)
   description:text         (optional)
-  hit_count:integer        (default: 0)
+  expansion_count:integer  (default: 0)
   owner_type:string        (optional)
   owner_id:integer         (optional)
   utm_enabled:boolean      (default: false)
@@ -86,7 +86,7 @@ ShortUrl
 Expansion
   short_url_id:integer     (required)
   domain_id:integer        (optional)
-  requested_url:string     (optional)
+  request_url:string       (optional)
   referrer_url:string      (optional)
   remote_ip:string         (optional)
   remote_addr:string       (optional)
