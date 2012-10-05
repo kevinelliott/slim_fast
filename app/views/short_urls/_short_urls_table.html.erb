@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Domain</th>
+    <th>Code</th>
+    <th>Destination URL</th>
+    <th>Expansion Count</th>
+    <th class="span3">Actions</th>
+  </tr>
+
+<% @short_urls.each do |short_url| %>
+  <tr>
+    <td class="middle"><%= short_url.name %></td>
+    <td class="middle"><%= short_url.short_domain.domain if short_url.short_domain %></td>
+    <td class="middle"><%= link_to short_url.code, short_url %></td>
+    <td class="middle"><%= short_url.destination_url %></td>
+    <td class="middle"><%= short_url.expansion_count %></td>
+    <td class="right">
+      <%= link_to 'Edit', edit_short_url_path(short_url), :class => 'btn btn-info' %>
+      <%= link_to 'Destroy', short_url, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+</table>

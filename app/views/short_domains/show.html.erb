@@ -16,7 +16,7 @@
   <b>Short URLs</b>
 </p>
 <% if @short_domain.short_urls.count > 0 %>
-	<%= render '/short_urls/short_urls_table', :short_urls => @short_domain.short_urls %>
+	<%= render 'short_urls/short_urls_table', :short_urls => @short_domain.short_urls %>
 <% else %>
 	There are no short URLs for this domain.
 <% end %>
