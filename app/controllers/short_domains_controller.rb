@@ -3,7 +3,7 @@ class ShortDomainsController < ApplicationController
   # GET /short_domains
   # GET /short_domains.json
   def index
-    @short_domains = ShortDomain.includes(:short_urls)
+    @short_domains = ShortDomain.all
 
     respond_to do |format|
       format.html # index.html.erb
