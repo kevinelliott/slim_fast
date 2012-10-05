@@ -1,4 +1,4 @@
-require_dependency "slim_fast/application_controller"
+#require_dependency "slim_fast/application_controller"
 
 module SlimFast
   class ExpansionsController < ApplicationController
