@@ -10,7 +10,7 @@
       <th>Code</th>
       <th>Destination URL</th>
       <th>Expansion Count</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
 
   <% @short_urls.each do |short_url| %>
@@ -20,10 +20,9 @@
       <td><%= link_to short_url.code, short_url %></td>
       <td><%= short_url.destination_url %></td>
       <td><%= short_url.expansion_count %></td>
-      <td>
-        <%= link_to 'Edit', edit_short_url_path(short_url) %>
-        /
-        <%= link_to 'Destroy', short_url, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <td class="right">
+        <%= link_to 'Edit', edit_short_url_path(short_url), :class => 'btn btn-info' %>
+        <%= link_to 'Destroy', short_url, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
     </tr>
   <% end %>
