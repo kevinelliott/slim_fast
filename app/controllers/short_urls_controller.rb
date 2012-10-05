@@ -3,9 +3,9 @@ class ShortUrlsController < ApplicationController
   # GET /short_urls
   # GET /short_urls.json
   def index
-    @short_domain = ShortDomain.find_by_id(params[:short_domain_id], :include => [:short_urls])
+    @short_domain = ShortDomain.find_by_id(params[:short_domain_id])
     @short_urls = if @short_domain
-      @short_domain.short_urls
+      @short_domain.short_urls.includes(:short_domain)
     else
       ShortUrl.includes(:short_domain)
     end
