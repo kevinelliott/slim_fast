@@ -1,7 +1,9 @@
-#require_dependency "slim_fast/application_controller"
+require_dependency "slim_fast/application_controller"
 
 module SlimFast
   class ShortDomainsController < ApplicationController
+    layout 'application'
+    
     # GET /short_domains
     # GET /short_domains.json
     def index
