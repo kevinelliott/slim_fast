@@ -1,37 +1,43 @@
 <%= render 'shared/slim_fast_navigation' %>
 
-<h1>Listing Expansions</h1>
+<h1>Expansions</h1>
 
-<table>
-  <tr>
-    <th>Short url</th>
-    <th>Domain</th>
-    <th>Request url</th>
-    <th>Referrer url</th>
-    <th>Remote ip</th>
-    <th>Remote addr</th>
-    <th>User agent</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<p>
+  An expansion is a request for the destination url of a short url. Each time a short url is exapnded (either directly or via an API call) an expansion is created and the expansion count is incremented for the short url.
+</p>
 
-<% @expansions.each do |expansion| %>
-  <tr>
-    <td><%= expansion.short_url_id %></td>
-    <td><%= expansion.domain_id %></td>
-    <td><%= expansion.request_url %></td>
-    <td><%= expansion.referrer_url %></td>
-    <td><%= expansion.remote_ip %></td>
-    <td><%= expansion.remote_addr %></td>
-    <td><%= expansion.user_agent %></td>
-    <td><%= link_to 'Show', expansion %></td>
-    <td><%= link_to 'Edit', edit_expansion_path(expansion) %></td>
-    <td><%= link_to 'Destroy', expansion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if @expansions.count > 0 %>
+  <table class="table table-striped">
+    <tr>
+      <th>Short URL</th>
+      <th>Request URL</th>
+      <th>Referrer URL</th>
+      <th>Remote IP</th>
+      <th>Remote Address</th>
+      <th>User Agent</th>
+      <th></th>
+    </tr>
+
+  <% @expansions.each do |expansion| %>
+    <tr>
+      <td><%= expansion.short_url_id %></td>
+      <td><%= expansion.request_url %></td>
+      <td><%= expansion.referrer_url %></td>
+      <td><%= expansion.remote_ip %></td>
+      <td><%= expansion.remote_addr %></td>
+      <td><%= expansion.user_agent %></td>
+      <td>
+        <%= link_to 'Show', expansion %>
+        /
+        <%= link_to 'Edit', edit_expansion_path(expansion) %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+<% else %>
+  <p>
+    There are no expansions.
+  </p>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Expansion', new_expansion_path %>

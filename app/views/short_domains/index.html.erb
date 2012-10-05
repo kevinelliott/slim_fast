@@ -2,30 +2,36 @@
 
 <h1>Short Domains</h1>
 
-<p>
-  The default domain is denoted by an asterisk (*) next to the domain name.
-</p>
+<% if @short_domains.count > 0 %>
+  <p>
+    The default domain is denoted by an asterisk (*) next to the domain name.
+  </p>
 
-<table>
-  <tr>
-    <th></th>
-    <th>Domain</th>
-    <th></th>
-  </tr>
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>Domain</th>
+      <th></th>
+    </tr>
 
-<% @short_domains.each do |short_domain| %>
-  <tr>
-    <td><%= short_domain.is_default ? "*" : "" %></td>
-    <td><%= link_to short_domain.domain, short_domain %></td>
-    <td>
-      <%= link_to 'Edit', edit_short_domain_path(short_domain) %>
-      /
-      <%= link_to 'Delete', short_domain, method: :delete, data: { confirm: 'All Short URLs specifically attached to this domain will be deleted as well. Are you sure?' } %>
-    </td>
-  </tr>
+  <% @short_domains.each do |short_domain| %>
+    <tr>
+      <td><%= short_domain.is_default ? "*" : "" %></td>
+      <td><%= link_to short_domain.domain, short_domain %></td>
+      <td>
+        <%= link_to 'Edit', edit_short_domain_path(short_domain) %>
+        /
+        <%= link_to 'Delete', short_domain, method: :delete, data: { confirm: 'All Short URLs specifically attached to this domain will be deleted as well. Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+<% else %>
+  <p>
+    There are no short domains.
+  </p>
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Short Domain', new_short_domain_path %>
