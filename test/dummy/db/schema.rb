@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20121004234536) do
 
-  create_table "slim_fast_expansions", :force => true do |t|
+  create_table "expansions", :force => true do |t|
     t.integer  "short_url_id"
     t.integer  "domain_id"
     t.string   "request_url"
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(:version => 20121004234536) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "slim_fast_short_domains", :force => true do |t|
+  create_table "short_domains", :force => true do |t|
     t.string   "domain"
     t.boolean  "is_default", :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
 
-  create_table "slim_fast_short_urls", :force => true do |t|
+  create_table "short_urls", :force => true do |t|
     t.integer  "short_domain_id"
     t.string   "code"
     t.string   "destination_url"

@@ -42,7 +42,8 @@ class ShortDomainsController < ApplicationController
   # POST /short_domains.json
   def create
     @short_domain = ShortDomain.new(params[:short_domain])
-
+    puts @short_domain.inspect
+    
     respond_to do |format|
       if @short_domain.save
         format.html { redirect_to @short_domain, notice: 'Short domain was successfully created.' }
