@@ -5,6 +5,7 @@ class ShortUrl < ActiveRecord::Base
 
   belongs_to :short_domain
   belongs_to :owner, :polymorphic => true
+  has_many :expansions
 
   validates_presence_of   :name
   validates_presence_of   :code

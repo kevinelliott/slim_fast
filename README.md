@@ -8,9 +8,9 @@ slim_fast is a Ruby gem that makes it easy to create your own custom URL shorten
 Project Status
 --------------
 
-### Not yet usable.
+### Basic functionality implemented, but not yet stable.
 
-slim_fast is not yet ready for public consumption. It is under heavy development and this status will change when the first usable release is available.
+slim_fast is not yet complete. It is under heavy development and this status will change when the first usable release is available.
 
 Features
 --------
@@ -18,13 +18,14 @@ Features
 Current:
 
 * Gem & Rails Engine
+* Custom Domain(s)
+* Simple Admin Interface
+* Basic Short Link Expansion Statistics
 
 Pending:
 
 * Shorten internal (Rails) and external URLs
-* Custom Domain(s)
-* Simple Admin Interface
-* Short Link Statistics
+* Detailed Short Link Statistics
 * Google Analytics Campaign Tracking (utm_source, etc)
 
 Future:
@@ -43,7 +44,8 @@ Installation
 
 ```shell
 $ gem install slim_fast
-$ rails g slim_fast:install
+$ rails g slim_fast_engine:install:migrations
+$ rake db:migrate
 ```
 
 Design Considerations
@@ -51,7 +53,7 @@ Design Considerations
 
 * Must be easy to install/upgrade
   * gem install slim_fast
-  * rails g slim_fast:install *or* rails g slim_fast:upgrade
+  * rails g slim_fast_engine:install:migrations
   * edit initializer
 * Must be testable
   * rspec

@@ -98,17 +98,17 @@ class ShortUrlsController < ApplicationController
     respond_to do |format|
       if @short_url
         @exp = @short_url.expansions.build
-        @exp.referrer_url = request.env['HTTP_REFERRER']
+        @exp.referrer_url = request.env['HTTP_REFERER']
         @exp.request_url  = request.original_url
         @exp.user_agent   = request.env["HTTP_USER_AGENT"]
         @exp.remote_ip    = request.remote_ip
         @exp.remote_addr  = request.remote_ip
         @exp.save
-        @short_url.increment!(:expansions)
+        @short_url.increment!(:expansion_count)
 
         format.html { redirect_to @short_url.destination_url }
       else
-        format.html { redirect_to root_url }
+        format.html { redirect_to invalid_code_path }
       end
     end
   end

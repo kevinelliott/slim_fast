@@ -1,9 +1,6 @@
-#SlimFast::Engine.routes.draw do
 Rails.application.routes.draw do
 
-  match '/:code' => 'short_urls#expand', :constraints => lambda { |req| 
-                                ShortDomain.pluck(:domain).include?(req.domain) 
-                              }
+  match '/invalid_code' => 'errors#invalid_code', :as => :invalid_code
 
   resources :expansions
   resources :short_domains do
@@ -12,5 +9,9 @@ Rails.application.routes.draw do
     end
   end
   resources :short_urls
+
+  match '/:code' => 'short_urls#expand', :constraints => lambda { |req| 
+                                ShortDomain.pluck(:domain).include?(req.domain) 
+                              }, :as => :code
   
 end
